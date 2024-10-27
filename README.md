@@ -36,3 +36,6 @@ ng serve
 ```
 
 Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
+
+## Screenshots
+![image](https://github.com/user-attachments/assets/35d77028-9768-4523-b834-38a5bf1613e4)
