@@ -43,3 +43,9 @@
     </ng-template>
   </p-table>
 </p-card>
+
+<app-aisle-add-dialog
+  [(visible)]="showAisleAddDialogVisible"
+  [market]="market"
+  (aisleAdded)="onAisleAdded($event)"
+></app-aisle-add-dialog>

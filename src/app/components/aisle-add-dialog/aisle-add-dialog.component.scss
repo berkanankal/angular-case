@@ -1,0 +1,26 @@
+:host ::ng-deep {
+  .p-dialog {
+    .p-dialog-content {
+      height: 400px;
+    }
+
+    .p-dropdown {
+      width: 100%;
+    }
+
+    .p-inputtext {
+      width: 100%;
+      padding: 0.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .p-field {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

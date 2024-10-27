@@ -1,0 +1,49 @@
+<p-dialog
+  header="Reyon Ekleme"
+  [(visible)]="visible"
+  [modal]="true"
+  (onHide)="hideDialog()"
+  [style]="{ width: '30rem' }"
+>
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="reyonName" class="mb-2">Reyon Adı</label>
+      <input
+        id="reyonName"
+        type="text"
+        pInputText
+        [(ngModel)]="reyonName"
+        [disabled]="true"
+      />
+    </div>
+    <div class="p-field">
+      <label for="reyonTur" class="mb-2">Reyon Türü</label>
+      <p-dropdown
+        id="reyonTur"
+        [options]="turOptions"
+        [(ngModel)]="selectedTur"
+        placeholder="Seçiniz"
+        [style]="{ width: '100%' }"
+      ></p-dropdown>
+    </div>
+    <div class="p-field">
+      <label for="marketName" class="mb-2">Eklenecek Market</label>
+      <input
+        id="marketName"
+        type="text"
+        pInputText
+        [value]="market.name"
+        [disabled]="true"
+      />
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      pRipple
+      label="Ekle"
+      (click)="addAisle()"
+      [disabled]="!selectedTur"
+    ></button>
+  </ng-template>
+</p-dialog>
