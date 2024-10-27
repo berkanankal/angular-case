@@ -84,5 +84,11 @@ export const marketB: Market = {
         { id: 'u24', name: 'Defter', reyonId: 'r7' },
       ],
     },
+    {
+      id: 'r8',
+      name: 'R4',
+      tur: ReyonTuru.KOZMETIK,
+      urunler: [{ id: 'u25', name: 'Kadın Parfüm', reyonId: 'r8' }],
+    },
   ],
 };

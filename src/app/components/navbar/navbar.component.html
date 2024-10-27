@@ -1,18 +1,24 @@
-<p-toolbar styleClass="navbar">
+<p-toolbar
+  [style]="{
+    'background-color': '#2a2a3a',
+    color: 'white',
+    padding: '1rem 2rem'
+  }"
+>
   <div class="p-toolbar-group-left">
     <img
       src="assets/icons/navbar-logo.png"
       alt="Supermarket APP Logo"
       class="logo"
     />
-    <span class="font-bold text-xl">Supermarket APP</span>
+    <span class="app-name">Supermarket APP</span>
   </div>
-  
+
   <div class="p-toolbar-group-center">
     <div class="currency-boxes">
-      <span class="currency-box">$ {{usdRate | number:'1.4-4'}}</span>
-      <span class="currency-box">£ {{gbpRate | number:'1.4-4'}}</span>
-      <span class="currency-box">€ {{eurRate | number:'1.4-4'}}</span>
+      <span class="currency-box">$ {{ usdRate | number : "1.4-4" }}</span>
+      <span class="currency-box">£ {{ gbpRate | number : "1.4-4" }}</span>
+      <span class="currency-box">€ {{ eurRate | number : "1.4-4" }}</span>
     </div>
   </div>
 

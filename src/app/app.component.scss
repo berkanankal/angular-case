@@ -11,7 +11,20 @@
 
   .save-button-container {
     position: fixed;
-    bottom: 50px;
-    right: 100px;
+    bottom: 40px;
+    right: 80px;
+  }
+}
+
+:host ::ng-deep {
+  .custom-save-button {
+    background-color: #2a2a3a;
+    border-color: #2a2a3a;
+    color: white;
+
+    &:hover {
+      background-color: #3a3a4a;
+      border-color: #3a3a4a;
+    }
   }
 }

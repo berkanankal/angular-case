@@ -1,10 +1,11 @@
-<p-card [header]="market.name" styleClass="mb-4">
+<p-card [header]="market.name">
   <div class="table-header">
     <p-button
       label="Reyon Ekle"
-      icon="pi pi-plus"
       (onClick)="openAisleAddDialog()"
-      styleClass="p-button-sm p-button-outlined"
+      styleClass="p-button-outlined"
+      size="small"
+      [style]="{ marginRight: '20px' }"
     ></p-button>
   </div>
   <p-table [value]="market.reyonlar" [tableStyle]="{ 'min-width': '50rem' }">
