@@ -3,7 +3,7 @@
     <p-button
       label="Reyon Ekle"
       icon="pi pi-plus"
-      (onClick)="showAisleAddDialog()"
+      (onClick)="openAisleAddDialog()"
       styleClass="p-button-sm p-button-outlined"
     ></p-button>
   </div>
@@ -36,7 +36,7 @@
           <p-button
             label="Ürün Ekle"
             styleClass="p-button-sm p-button-outlined"
-            (onClick)="addProduct(reyon)"
+            (onClick)="openProductAddDialog(reyon)"
           ></p-button>
         </td>
       </tr>
@@ -45,7 +45,15 @@
 </p-card>
 
 <app-aisle-add-dialog
+  *ngIf="showAisleAddDialogVisible"
   [(visible)]="showAisleAddDialogVisible"
   [market]="market"
   (aisleAdded)="onAisleAdded($event)"
 ></app-aisle-add-dialog>
+
+<app-product-add-dialog
+  *ngIf="showProductAddDialogVisible"
+  [(visible)]="showProductAddDialogVisible"
+  [reyon]="selectedReyon"
+  (productAdded)="onProductAdded($event)"
+></app-product-add-dialog>

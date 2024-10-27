@@ -43,7 +43,11 @@ export class AisleAddDialogComponent implements OnInit {
   }
 
   updateReyonName() {
-    this.reyonName = `R${this.market.reyonlar.length + 1}`;
+    const existingIds = this.market.reyonlar.map((reyon) =>
+      parseInt(reyon.name.slice(1))
+    );
+    const maxId = Math.max(...existingIds, 0);
+    this.reyonName = `R${maxId + 1}`;
   }
 
   hideDialog() {

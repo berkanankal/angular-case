@@ -1,0 +1,38 @@
+<p-dialog
+  header="Ürün Ekleme"
+  [(visible)]="visible"
+  [modal]="true"
+  (onHide)="hideDialog()"
+  [style]="{ width: '30rem' }"
+>
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="productName">Ürün Adı</label>
+      <input
+        id="productName"
+        type="text"
+        pInputText
+        [(ngModel)]="productName"
+      />
+    </div>
+    <div class="p-field">
+      <label for="aisleInfo">Eklenecek Reyon</label>
+      <input
+        id="aisleInfo"
+        type="text"
+        pInputText
+        [value]="reyon.name + ' - ' + reyon.tur"
+        [disabled]="true"
+      />
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      pRipple
+      label="Ekle"
+      (click)="addProduct()"
+      [disabled]="!productName"
+    ></button>
+  </ng-template>
+</p-dialog>

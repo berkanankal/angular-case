@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
-import { Market, Reyon, ReyonTuru } from '../../../types';
+import { Market, Reyon, ReyonTuru, Urun } from '../../../types';
 import { AisleAddDialogComponent } from '../aisle-add-dialog/aisle-add-dialog.component';
+import { ProductAddDialogComponent } from '../product-add-dialog/product-add-dialog.component';
 
 @Component({
   selector: 'app-market',
@@ -15,6 +16,7 @@ import { AisleAddDialogComponent } from '../aisle-add-dialog/aisle-add-dialog.co
     TableModule,
     ButtonModule,
     AisleAddDialogComponent,
+    ProductAddDialogComponent,
   ],
   templateUrl: './market.component.html',
   styleUrl: './market.component.scss',
@@ -22,8 +24,10 @@ import { AisleAddDialogComponent } from '../aisle-add-dialog/aisle-add-dialog.co
 export class MarketComponent {
   @Input() market!: Market;
   showAisleAddDialogVisible: boolean = false;
+  showProductAddDialogVisible: boolean = false;
+  selectedReyon!: Reyon;
 
-  showAisleAddDialog() {
+  openAisleAddDialog() {
     this.showAisleAddDialogVisible = true;
   }
 
@@ -36,11 +40,23 @@ export class MarketComponent {
     });
   }
 
-  addProduct(reyon: Reyon) {
-    console.log('Add product to aisle:', reyon.name);
+  openProductAddDialog(reyon: Reyon) {
+    this.selectedReyon = reyon;
+    this.showProductAddDialogVisible = true;
+  }
+
+  onProductAdded(newProduct: Urun) {
+    if (this.selectedReyon) {
+      this.selectedReyon.urunler.push(newProduct);
+    }
   }
 
   deleteAisle(reyon: Reyon) {
-    console.log('Delete aisle:', reyon.name);
+    if (confirm(`${reyon.name} reyonunu silmek istediğinizden emin misiniz?`)) {
+      const index = this.market.reyonlar.findIndex((r) => r.id === reyon.id);
+      if (index !== -1) {
+        this.market.reyonlar.splice(index, 1);
+      }
+    }
   }
 }
