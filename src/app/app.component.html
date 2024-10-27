@@ -2,8 +2,7 @@
   <app-navbar></app-navbar>
 
   <div class="markets-container">
-    <app-market [market]="marketA"></app-market>
-    <app-market [market]="marketB"></app-market>
+    <app-market *ngFor="let market of markets" [market]="market"></app-market>
   </div>
 
   <div class="save-button-container">
@@ -12,6 +11,7 @@
       styleClass="p-button-raised"
       size="large"
       severity="success"
+      (onClick)="saveChanges()"
     ></p-button>
   </div>
 </div>

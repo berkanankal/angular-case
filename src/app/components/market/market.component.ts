@@ -52,11 +52,9 @@ export class MarketComponent {
   }
 
   deleteAisle(reyon: Reyon) {
-    if (confirm(`${reyon.name} reyonunu silmek istediğinizden emin misiniz?`)) {
-      const index = this.market.reyonlar.findIndex((r) => r.id === reyon.id);
-      if (index !== -1) {
-        this.market.reyonlar.splice(index, 1);
-      }
+    const index = this.market.reyonlar.findIndex((r) => r.id === reyon.id);
+    if (index !== -1) {
+      this.market.reyonlar.splice(index, 1);
     }
   }
 }
