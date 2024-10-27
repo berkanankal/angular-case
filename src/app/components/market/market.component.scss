@@ -44,6 +44,11 @@
   margin-right: 0.5rem;
   display: inline-block;
   margin-bottom: 0.3rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ffb703;
+  }
 }
 
 .aisle-cell {
