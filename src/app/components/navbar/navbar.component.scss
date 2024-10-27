@@ -1,0 +1,41 @@
+.navbar {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+}
+
+.currency-boxes {
+  display: flex;
+  gap: 1rem;
+  margin-right: 1rem;
+}
+
+.currency-box {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.search-box {
+  input {
+    border: none;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border-radius: 4px;
+    width: 250px;
+
+    &::placeholder {
+      color: #a0a0a0;
+    }
+  }
+
+  i {
+    color: #a0a0a0;
+  }
+}
+

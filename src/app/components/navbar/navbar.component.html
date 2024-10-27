@@ -1,0 +1,31 @@
+<p-toolbar styleClass="navbar">
+  <div class="p-toolbar-group-left">
+    <img
+      src="assets/navbar-logo.png"
+      alt="Supermarket APP Logo"
+      class="logo"
+    />
+    <span class="font-bold text-xl">Supermarket APP</span>
+  </div>
+  
+  <div class="p-toolbar-group-center">
+    <div class="currency-boxes">
+      <span class="currency-box">$ {{usdRate | number:'1.4-4'}}</span>
+      <span class="currency-box">£ {{gbpRate | number:'1.4-4'}}</span>
+      <span class="currency-box">€ {{eurRate | number:'1.4-4'}}</span>
+    </div>
+  </div>
+
+  <div class="p-toolbar-group-right">
+    <div class="p-input-icon-left search-box">
+      <i class="pi pi-search"></i>
+      <input
+        type="text"
+        pInputText
+        placeholder="Ürün Ara"
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="onSearch($event)"
+      />
+    </div>
+  </div>
+</p-toolbar>
