@@ -29,7 +29,11 @@
         </td>
         <td>{{ reyon.tur }}</td>
         <td>
-          <span *ngFor="let urun of reyon.urunler" class="product-tag">
+          <span
+            *ngFor="let urun of reyon.urunler"
+            class="product-tag"
+            (click)="openProductUpdateDialog(urun)"
+          >
             {{ urun.name }}
           </span>
         </td>
@@ -58,3 +62,13 @@
   [reyon]="selectedReyon"
   (productAdded)="onProductAdded($event)"
 ></app-product-add-dialog>
+
+<app-product-update-dialog
+  *ngIf="showProductUpdateDialogVisible"
+  [(visible)]="showProductUpdateDialogVisible"
+  [product]="selectedProduct"
+  [currentMarket]="market"
+  [markets]="allMarkets"
+  (productUpdated)="onProductUpdated($event)"
+  (productDeleted)="onProductDeleted($event)"
+></app-product-update-dialog>

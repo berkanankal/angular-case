@@ -1,17 +1,11 @@
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  ViewChildren,
-  QueryList,
-} from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MarketComponent } from './components/market/market.component';
 import { StorageService } from './services/storage.service';
 import { SearchService } from './services/search.service';
-import { Market, Reyon, Urun } from '../types';
+import { Market } from '../types';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 
@@ -32,8 +26,6 @@ export class AppComponent implements OnInit, OnDestroy {
   allMarkets: Market[] = [];
   filteredMarkets: Market[] = [];
   private searchSubscription: Subscription | undefined;
-
-  @ViewChildren(MarketComponent) marketComponents!: QueryList<MarketComponent>;
 
   constructor(
     private storageService: StorageService,

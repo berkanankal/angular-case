@@ -5,6 +5,7 @@
     <app-market
       *ngFor="let market of filteredMarkets"
       [market]="market"
+      [allMarkets]="allMarkets"
       [style]="{ width: '50%' }"
     ></app-market>
   </div>
