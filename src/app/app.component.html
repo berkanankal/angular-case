@@ -2,7 +2,7 @@
   <app-navbar></app-navbar>
 
   <div class="markets-container">
-    <app-market *ngFor="let market of markets" [market]="market"></app-market>
+    <app-market *ngFor="let market of filteredMarkets" [market]="market"></app-market>
   </div>
 
   <div class="save-button-container">
