@@ -1,0 +1,56 @@
+:host ::ng-deep {
+  .p-card {
+    background-color: #2a2a3a;
+    color: white;
+  }
+
+  .p-card-header {
+    background-color: #1e1e2e;
+    padding: 1rem;
+  }
+
+  .p-datatable {
+    background-color: transparent;
+  }
+
+  .p-datatable .p-datatable-thead > tr > th {
+    background-color: #1e1e2e;
+    color: white;
+    border: none;
+  }
+
+  .p-datatable .p-datatable-tbody > tr {
+    background-color: transparent;
+    color: white;
+  }
+
+  .p-datatable .p-datatable-tbody > tr > td {
+    border: none;
+    border-bottom: 1px solid #3a3a4a;
+  }
+
+  .table-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+  }
+}
+
+.product-tag {
+  background-color: #ffa500;
+  color: black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+
+.aisle-cell {
+  display: flex;
+  align-items: center;
+
+  .aisle-name {
+    margin-top: 2px;
+  }
+}

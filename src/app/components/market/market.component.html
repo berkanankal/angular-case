@@ -1,0 +1,45 @@
+<p-card [header]="market.name" styleClass="mb-4">
+  <div class="table-header">
+    <p-button
+      label="Reyon Ekle"
+      icon="pi pi-plus"
+      (onClick)="showAisleAddDialog()"
+      styleClass="p-button-sm p-button-outlined"
+    ></p-button>
+  </div>
+  <p-table [value]="market.reyonlar" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Reyon</th>
+        <th>Tür</th>
+        <th>Ürünler</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-reyon>
+      <tr>
+        <td class="aisle-cell">
+          <span class="aisle-name">{{ reyon.name }}</span>
+          <p-button
+            icon="pi pi-trash"
+            (onClick)="deleteAisle(reyon)"
+            styleClass="p-button-rounded p-button-danger p-button-text"
+          ></p-button>
+        </td>
+        <td>{{ reyon.tur }}</td>
+        <td>
+          <span *ngFor="let urun of reyon.urunler" class="product-tag">
+            {{ urun.name }}
+          </span>
+        </td>
+        <td>
+          <p-button
+            label="Ürün Ekle"
+            styleClass="p-button-sm p-button-outlined"
+            (onClick)="addProduct(reyon)"
+          ></p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

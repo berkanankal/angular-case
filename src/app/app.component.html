@@ -1,3 +1,17 @@
 <div class="main-container">
   <app-navbar></app-navbar>
+
+  <div class="markets-container">
+    <app-market [market]="marketA"></app-market>
+    <app-market [market]="marketB"></app-market>
+  </div>
+
+  <div class="save-button-container">
+    <p-button
+      label="Kaydet"
+      styleClass="p-button-raised"
+      size="large"
+      severity="success"
+    ></p-button>
+  </div>
 </div>
