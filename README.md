@@ -11,7 +11,7 @@ https://supermarket-app.netlify.app/
 First clone this repository.
 
 ```bash
-git clone https://github.com/berkanankal/angular-case
+https://github.com/berkanankal/angular-case.git
 
 ```
 
